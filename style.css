@@ -10,6 +10,8 @@
 :root {
     --primary-color: #c85454;
     --secondary-color: #161616;
+    --primary-box-shadow: 2px 2px 5px 5px whitesmoke;
+
 }
 
 .header nav {
@@ -19,7 +21,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 3vw;
+    height: max(5%, 8%);
     background-color: #ff9c9c2a;
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
@@ -41,8 +43,7 @@
 .header nav>div>h1,
 a {
     color: var(--primary-color);
-    font-size: 1.4vw;
-    line-height: 1.5vw;
+    font-size: clamp(1rem, 1.6vw, 2rem);
     text-decoration: none;
 }
 
@@ -60,7 +61,6 @@ a {
 
 
 .navigation div a {
-    font-size: 0.9vw;
     color: #000;
     text-decoration: none;
     padding: 7px;
@@ -96,7 +96,7 @@ a {
 
 .banner-head h2 {
     font-weight: 700;
-    font-size: 5vw;
+    font-size: clamp(2rem, 4vw, 80px);
     line-height: 80px;
     margin-bottom: 20px;
 }
@@ -114,7 +114,7 @@ a {
     color: #FFFFFF;
     background: var(--primary-color);
     font-weight: 400;
-    font-size: 20px;
+    font-size: clamp(1rem, 2vw, 3rem);
     padding: 16px 25px;
     border: none;
     border-radius: 5px;
@@ -125,13 +125,8 @@ a {
     font-size: 40px;
 }
 
-.banner-img.banner-child {
-    position: relative;
-}
-
 .banner-img img {
-    position: absolute;
-    bottom: 0;
+    margin-top: 97px;
     max-width: 100%;
     height: 85%;
 }
@@ -148,11 +143,13 @@ a {
     justify-content: center;
     align-items: center;
     gap: 30px;
+    flex-wrap: wrap;
 
     background-color: var(--secondary-color);
     border-radius: 10px;
     width: 312PX;
     height: 312px;
+    margin-bottom: 50px;
 }
 
 .utilities button {
@@ -179,16 +176,17 @@ a {
 
 
 .main-container .blog-container {
+    max-width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 25px;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
 }
 
 .card {
     width: 312px;
     border: none;
     border-radius: 10px;
-    box-shadow: 1px 1px 5px 5px whitesmoke;
+    box-shadow: var(--primary-box-shadow);
 }
 
 .card article {
@@ -243,7 +241,7 @@ article h3 {
     align-items: center;
     justify-content: center;
     background: var(--secondary-color);
-    height: 444px;
+    height: 544px;
 }
 
 .footer h2 {
@@ -252,18 +250,14 @@ article h3 {
     font-size: 40px;
 }
 
-.footer hr {
-    width: max(1320px, 355px);
-    margin: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.information{
+.information {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 100%;
-    margin-bottom: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 80%;
+    padding-top: 50px;
+    margin: 50px auto;
 }
 
 .information a {
@@ -273,31 +267,90 @@ article h3 {
     color: #B9B9B9;
 }
 
-.social-media a{
+.social-media a {
     font-size: 24px;
     color: white;
     margin-right: 25px;
 }
 
 
-@media screen and (max-width: 768px) and (min-width: 480px) {
+@media (426px <=width <=768px) {
     .header nav .navigation {
         display: none;
+    }
+
+    .banner {
+        height: auto;
+    }
+
+    .banner-head {
+        padding: 70px 40px;
+    }
+
+    .banner-img img {
+        margin-top: 67px;
+    }
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .utilities {
+        flex-direction: row;
+        background: none;
+        width: auto;
+        height: auto;
+        /* margin-bottom: 50px; */
+    }
+
+    .utilities button {
+        box-shadow: var(--primary-box-shadow);
     }
 }
 
-@media screen and (max-width: 479px) {
+@media (width <=425px) {
     .banner {
         display: flex;
         flex-direction: column;
-        /* /* background: #161616; */
-        max-width: 100%;
-        height: 646px;
-        /* border-radius: 30px; */
+        height: auto;
     }
 
     .header nav .navigation {
-
         display: none;
+    }
+
+    .banner-head {
+        padding: 70px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .banner-head h2 {
+        line-height: 50px;
+    }
+
+    .banner-head p {
+        line-height: 20px;
+    }
+
+    .banner-img img {
+        margin-top: 0;
+    }
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .utilities {
+        background: none;
+    }
+
+    .utilities button {
+        box-shadow: var(--primary-box-shadow);
     }
 }
