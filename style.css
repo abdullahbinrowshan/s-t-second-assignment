@@ -37,7 +37,8 @@
 }
 
 .nav-logo img {
-    width: 3vw;
+    margin-top: 8px;
+    width: clamp(2rem, 4vw, 1rem);
 }
 
 .header nav>div>h1,
@@ -135,6 +136,7 @@ a {
     display: flex;
     gap: 25px;
     margin: 130px 2vw;
+    align-items: center;
 }
 
 .utilities {
@@ -292,7 +294,6 @@ article h3 {
     }
 
     .main-container {
-        display: flex;
         flex-direction: column;
     }
 
@@ -341,9 +342,7 @@ article h3 {
     }
 
     .main-container {
-        display: flex;
         flex-direction: column;
-        align-items: center;
     }
 
     .utilities {
