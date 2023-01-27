@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qatar FIFA WORLD CUP 2022</title>
+    <title>QATAR CUP 2022</title>
     <link rel="stylesheet" href="style.css">
     <!-- font awesome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -21,8 +21,8 @@
                             2022</span></a></h1>
             </div>
             <div class="navigation">
-                <div><a href="#">Upcoming Match</a></div>
-                <div><a href="#">All Group</a></div>
+                <div><a href="match.html">Upcoming Match</a></div>
+                <div id="all-group"><a>All Group</a></div>
                 <div><a href="#">Blog</a></div>
             </div>
         </nav>
@@ -37,22 +37,22 @@
                 <button class="button">Watch Live <i class="fa-solid fa-angle-right">></i></button>
             </div>
             <picture class="banner-img banner-child">
-                <img src="images/Sadio-Mane-PNG-Transparent-Image.png" alt="">
+                <img src="images/banner-sadio-mane.png" alt="">
             </picture>
         </div>
     </header>
     <main class="main-container">
         <div class="utilities">
-            <button class="upcoming-match"><a href="#">Upcoming Match</a></button>
-            <button><a href="#">All Group</a></button>
-            <button class="blog"><a href="#">Blog</a></button>
+            <button class="upcoming-match"><a href="match.html">Upcoming Match</a></button>
+            <button id="all-group"><a>All Group</a></button>
+            <button class="this-page"><a href="#">Blog</a></button>
         </div>
         <div class="blog-container">
             <div class="card">
                 <picture>
-                    <img src="images/assets/Blog-Image.png" alt="" />
+                    <img src="images/assets/blog-image.png" alt="" />
                 </picture>
-                <article>
+                <article class="article">
                     <button class="transfer-button">Transfer</button>
                     <h3>Transfer Live: Chlesea in talks over Kimpenbe transfer</h3>
                     <div class="info">
@@ -67,9 +67,9 @@
             </div>
             <div class="card">
                 <picture>
-                    <img src="images/assets/Blog-Image.png" alt="" />
+                    <img src="images/assets/blog-image.png" alt="" />
                 </picture>
-                <article>
+                <article class="article">
                     <button class="transfer-button">Transfer</button>
                     <h3>Transfer Live: Chlesea in talks over Kimpenbe transfer</h3>
                     <div class="info">
@@ -84,9 +84,9 @@
             </div>
             <div class="card">
                 <picture>
-                    <img src="images/assets/Blog-Image.png" alt="" />
+                    <img src="images/assets/blog-image.png" alt="" />
                 </picture>
-                <article>
+                <article class="article">
                     <button class="transfer-button">Transfer</button>
                     <h3>Transfer Live: Chlesea in talks over Kimpenbe transfer</h3>
                     <div class="info">
@@ -101,9 +101,9 @@
             </div>
             <div class="card">
                 <picture>
-                    <img src="images/assets/Blog-Image.png" alt="" />
+                    <img src="images/assets/blog-image.png" alt="" />
                 </picture>
-                <article>
+                <article class="article">
                     <button class="transfer-button">Transfer</button>
                     <h3>Transfer Live: Chlesea in talks over Kimpenbe transfer</h3>
                     <div class="info">
@@ -118,9 +118,9 @@
             </div>
             <div class="card">
                 <picture>
-                    <img src="images/assets/Blog-Image.png" alt="" />
+                    <img src="images/assets/blog-image.png" alt="" />
                 </picture>
-                <article>
+                <article class="article">
                     <button class="transfer-button">Transfer</button>
                     <h3>Transfer Live: Chlesea in talks over Kimpenbe transfer</h3>
                     <div class="info">
@@ -135,9 +135,9 @@
             </div>
             <div class="card">
                 <picture>
-                    <img src="images/assets/Blog-Image.png" alt="" />
+                    <img src="images/assets/blog-image.png" alt="" />
                 </picture>
-                <article>
+                <article class="article">
                     <button class="transfer-button">Transfer</button>
                     <h3>Transfer Live: Chlesea in talks over Kimpenbe transfer</h3>
                     <div class="info">
@@ -150,11 +150,11 @@
                     </div>
                 </article>
             </div>
-            <div class="card">
+            <div class="card tablet-none">
                 <picture>
-                    <img src="images/assets/Blog-Image.png" alt="" />
+                    <img src="images/assets/blog-image.png" alt="" />
                 </picture>
-                <article>
+                <article class="article">
                     <button class="transfer-button">Transfer</button>
                     <h3>Transfer Live: Chlesea in talks over Kimpenbe transfer</h3>
                     <div class="info">
@@ -167,11 +167,11 @@
                     </div>
                 </article>
             </div>
-            <div class="card">
+            <div class="card tablet-none">
                 <picture>
-                    <img src="images/assets/Blog-Image.png" alt="" />
+                    <img src="images/assets/blog-image.png" alt="" />
                 </picture>
-                <article>
+                <article class="article">
                     <button class="transfer-button">Transfer</button>
                     <h3>Transfer Live: Chlesea in talks over Kimpenbe transfer</h3>
                     <div class="info">
@@ -184,11 +184,11 @@
                     </div>
                 </article>
             </div>
-            <div class="card">
+            <div class="card tablet-none">
                 <picture>
-                    <img src="images/assets/Blog-Image.png" alt="" />
+                    <img src="images/assets/blog-image.png" alt="" />
                 </picture>
-                <article>
+                <article class="article">
                     <button class="transfer-button">Transfer</button>
                     <h3>Transfer Live: Chlesea in talks over Kimpenbe transfer</h3>
                     <div class="info">
@@ -202,6 +202,9 @@
                 </article>
             </div>
         </div>
+        <div class="tablet-visible-btn">
+            <button class="button">View All</button>
+        </div> 
     </main>
     <footer class="footer">
         <h2>Goal</h2>

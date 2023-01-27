@@ -11,7 +11,10 @@
     --primary-color: #c85454;
     --secondary-color: #161616;
     --primary-box-shadow: 2px 2px 5px 5px whitesmoke;
+}
 
+.header {
+    position: relative;
 }
 
 .header nav {
@@ -92,6 +95,9 @@ a {
 }
 
 .banner-head {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
     padding: 110px 80px;
 }
 
@@ -106,7 +112,7 @@ a {
     font-weight: 400;
     font-size: 1.5vw;
     line-height: 26px;
-    margin-bottom: 30px;
+    margin: max(38px, 60px) auto;
 }
 
 .button {
@@ -136,27 +142,26 @@ a {
     display: flex;
     gap: 25px;
     margin: 130px 2vw;
-    align-items: center;
 }
 
 .utilities {
+    background-color: var(--secondary-color);
+    width: 312px;
+    height: max(312px, 390px);
+    border-radius: 10px;
+    margin-bottom: 50px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 30px;
-    flex-wrap: wrap;
 
-    background-color: var(--secondary-color);
-    border-radius: 10px;
-    width: 312PX;
-    height: 312px;
-    margin-bottom: 50px;
 }
 
 .utilities button {
     display: block;
-    width: 274px;
+    width: min(274px, 210px);
     text-align: center;
 
     padding: 20px 0;
@@ -170,18 +175,24 @@ a {
     cursor: pointer;
 }
 
-.utilities .blog,
-.blog>a {
+.utilities .this-page,
+.this-page>a {
     background-color: var(--primary-color);
     color: #FFF;
 }
 
+:is(#all-group,#all-group>a):hover {
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
 
 .main-container .blog-container {
-    max-width: 100%;
+    width: 100%;
     display: grid;
     gap: 25px;
     grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
+    justify-items: center;
 }
 
 .card {
@@ -191,7 +202,34 @@ a {
     box-shadow: var(--primary-box-shadow);
 }
 
-.card article {
+
+/* ------------------------------------
+    Upcoming Match page style start
+------------------------------------ */
+
+.card:has(.flags) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: auto;
+    padding: 30px;
+}
+
+.card>.flags{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ------------------------------------
+    Upcoming Match page style start
+------------------------------------ */
+
+
+
+
+.card article.article {
     margin: 20px;
 }
 
@@ -237,19 +275,26 @@ article h3 {
     content: "💬";
 }
 
+.tablet-visible-btn {
+    display: none;
+}
+
 .footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background: var(--secondary-color);
-    height: 544px;
+    margin: 0;
+    padding: 0;
+    height: min(544px, auto);
 }
 
 .footer h2 {
     color: white;
     font-weight: 600;
     font-size: 40px;
+    padding-top: 50px;
 }
 
 .information {
@@ -267,6 +312,10 @@ article h3 {
     font-weight: 500;
     font-size: 16px;
     color: #B9B9B9;
+}
+
+.social-media {
+    margin-bottom: 50px;
 }
 
 .social-media a {
@@ -295,19 +344,30 @@ article h3 {
 
     .main-container {
         flex-direction: column;
+        align-items: center;
     }
 
     .utilities {
         flex-direction: row;
+        flex-wrap: wrap;
         background: none;
         width: auto;
         height: auto;
-        /* margin-bottom: 50px; */
     }
 
     .utilities button {
         box-shadow: var(--primary-box-shadow);
     }
+
+    .tablet-none {
+        display: none;
+    }
+
+    .tablet-visible-btn {
+        display: block;
+        margin-top: 30px;
+    }
+
 }
 
 @media (width <=425px) {
@@ -343,6 +403,8 @@ article h3 {
 
     .main-container {
         flex-direction: column;
+        align-items: center;
+
     }
 
     .utilities {
@@ -351,5 +413,9 @@ article h3 {
 
     .utilities button {
         box-shadow: var(--primary-box-shadow);
+    }
+
+    .tablet-visible-btn {
+        display: none;
     }
 }
