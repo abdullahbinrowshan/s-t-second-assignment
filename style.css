@@ -47,7 +47,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: max(4%, 6%);
+    height: max(4%, 5vw);
     background-color: #ff9c9c2a;
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
@@ -113,9 +113,9 @@ a {
 .banner {
     display: flex;
     justify-content: center;
-    height: 646px;
+    min-height: 646px;
     border-radius: 30px;
-    margin: 70px 2.5vw;
+    margin: 120px 2.5vw 60px;
     color: white;
 }
 
@@ -156,8 +156,8 @@ a {
     background: var(--primary-color);
     font-weight: 400;
     font-size: max(14px, 1.3vw);
-    width: 140px;
-    height: 50px;
+    min-width: 140px;
+    min-height: 50px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
