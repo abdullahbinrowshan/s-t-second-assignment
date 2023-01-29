@@ -11,6 +11,24 @@
     --primary-color: #c85454;
     --secondary-color: #161616;
     --primary-box-shadow: 2px 2px 5px 5px whitesmoke;
+    --text-gradient: linear-gradient(
+        45deg,
+        #f9f871,
+        #ffc75f,
+        #ff9671,
+        #ff6f91,
+        #d65db1,
+        #845ec2
+    );
+    --bg-gradient: linear-gradient(
+        45deg,
+        rgb(0, 0, 0),
+        rgb(20, 20, 20),
+        rgb(40, 40, 40),
+        rgb(60, 60, 60),
+        rgb(80, 80, 80),
+        rgb(100, 100, 100)
+        );
 }
 
 .header {
@@ -81,7 +99,6 @@ a {
 .banner {
     display: flex;
     justify-content: center;
-    background: var(--secondary-color);
     width: 94vw;
     height: 646px;
     border-radius: 30px;
@@ -126,6 +143,13 @@ a {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: all .5s;
+}
+
+.banner-head .button:hover {
+    transform: skewX(-20deg);
+    padding-left: 5px;
+    border-radius: 0;
 }
 
 .btn .right-arrow {
@@ -163,7 +187,6 @@ a {
 }
 
 .utilities {
-    background-color: var(--secondary-color);
     width: 312px;
     height: max(312px, 390px);
     border-radius: 10px;
@@ -245,7 +268,6 @@ a {
 
 
 
-
 .card article.article {
     margin: 20px;
 }
@@ -301,14 +323,12 @@ article h3 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: var(--secondary-color);
     margin: 0;
     padding: 0;
     height: min(544px, auto);
 }
 
 .footer h2 {
-    color: white;
     font-weight: 600;
     font-size: 40px;
     padding-top: 50px;
@@ -341,8 +361,30 @@ article h3 {
     margin-right: 25px;
 }
 
+.banner, .footer, .utilities {
+    background-image: var(--bg-gradient);
+    background-size: 500%;
+    animation: gradient 30s infinite alternate;
+}
+.banner-head, .footer h2 {
+    background-image: var(--text-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 400%;
+    animation: gradient 30s infinite alternate;
+}
 
-@media (426px <=width <=768px) {
+@keyframes gradient {
+    0%{
+        background-position: left;
+    }
+    100%{
+        background-position: right;
+    }
+}
+
+@media (430px <=width <=768px) {
     .header nav .navigation {
         display: none;
     }
@@ -387,7 +429,7 @@ article h3 {
 
 }
 
-@media (width <=425px) {
+@media (width <=429px) {
     .banner {
         display: flex;
         flex-direction: column;
