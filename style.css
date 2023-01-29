@@ -31,6 +31,11 @@
         );
 }
 
+
+/* ---------------
+    header start
+   --------------- */ 
+
 .header {
     position: relative;
 }
@@ -68,6 +73,11 @@ a {
     text-decoration: none;
 }
 
+
+/* ---------------
+    logo's part
+   --------------- */ 
+
 .header-fifa-22 {
     font-size: 1.2vw;
 }
@@ -96,10 +106,13 @@ a {
     text-decoration: underline;
 }
 
+/* ---------------
+    Banner start
+   --------------- */ 
+
 .banner {
     display: flex;
     justify-content: center;
-    width: 94vw;
     height: 646px;
     border-radius: 30px;
     margin: 70px 2.5vw;
@@ -120,15 +133,20 @@ a {
 }
 
 .banner-head h2 {
-    font-weight: 700;
-    font-size: max(2rem, 4vw);
+    font-weight: 900;
+    font-size: max(2rem, 5vw);
+    line-height: 1;
 }
 
 .banner-head p {
     font-weight: 400;
-    font-size: 1.5vw;
-    line-height: 26px;
+    font-size: max(.8rem, 1.5vw);
+    line-height: 1.2;
 }
+
+/* ---------------
+    Button styles
+   --------------- */ 
 
 .button {
     display: flex;
@@ -146,20 +164,20 @@ a {
     transition: all .5s;
 }
 
-.banner-head .button:hover {
+.button:hover,
+.button:focus {
     transform: skewX(-20deg);
     padding-left: 5px;
     border-radius: 0;
 }
 
-.btn .right-arrow {
-    font-size: 40px;
-}
-
-
 /* 
     to stay bottom of the banner 
 */
+
+/* ---------------
+    Banner image
+   --------------- */ 
 
 .banner-img {
     position: relative;
@@ -180,11 +198,28 @@ a {
     bottom: 0;
 }
 
+/* ---------------
+    Banner end
+   --------------- */ 
+
+/* ---------------
+    header end
+   --------------- */ 
+
+
+
+/* -------------------
+    Main content start
+   ------------------- */ 
 .main-container {
     display: flex;
     gap: 25px;
     margin: 100px 2vw;
 }
+
+/* -----------------------------
+    navigation menu on the page
+   ----------------------------- */ 
 
 .utilities {
     width: 312px;
@@ -215,17 +250,29 @@ a {
     cursor: pointer;
 }
 
+/* ---------------------------------------------
+    to indicate which page user currently have
+   --------------------------------------------- */ 
+
 .utilities .this-page,
 .this-page>a {
     background-color: var(--primary-color);
     color: #FFF;
 }
 
+
+/* ------------------------
+    unnecessary buttons
+   ------------------------ */ 
+
 :is(#all-group,#all-group>a):hover {
     cursor: not-allowed;
     text-decoration: line-through;
 }
 
+/* ---------------------------------------
+    this container contains all the cards 
+   --------------------------------------- */ 
 
 .main-container .blog-container {
     width: 100%;
@@ -237,9 +284,19 @@ a {
 
 .card {
     width: 312px;
+    background-color: white;
     border: none;
     border-radius: 10px;
     box-shadow: var(--primary-box-shadow);
+    transition: transform .5s;
+}
+
+.card article.article {
+    margin: 20px;
+}
+
+.card:hover {
+    transform: scale(1.1);
 }
 
 
@@ -268,10 +325,9 @@ a {
 
 
 
-.card article.article {
-    margin: 20px;
-}
-
+/* -------------------------------------------
+    this button is inside the blog page card
+   ------------------------------------------- */ 
 .transfer-button {
     padding: 4px 16px;
     margin-bottom: 15px;
@@ -318,6 +374,17 @@ article h3 {
     display: none;
 }
 
+
+/* -------------------
+    Main content end
+   ------------------- */ 
+
+
+
+/* ------------------------
+    Footer container start
+   ------------------------ */ 
+
 .footer {
     display: flex;
     flex-direction: column;
@@ -361,18 +428,27 @@ article h3 {
     margin-right: 25px;
 }
 
+/* -------------
+    Footer end
+   ------------- */ 
+
+
+/* -----------------
+    animation start
+   ----------------- */ 
+
 .banner, .footer, .utilities {
     background-image: var(--bg-gradient);
     background-size: 500%;
-    animation: gradient 30s infinite alternate;
+    animation: gradient 15s infinite alternate;
 }
-.banner-head, .footer h2 {
+.banner-head h2, .footer h2 {
     background-image: var(--text-gradient);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     background-size: 400%;
-    animation: gradient 30s infinite alternate;
+    animation: gradient 15s infinite alternate;
 }
 
 @keyframes gradient {
@@ -383,6 +459,16 @@ article h3 {
         background-position: right;
     }
 }
+
+/* ---------------
+    animation end
+   --------------- */ 
+
+
+
+/* -------------------
+    Tablet view start
+   ------------------- */ 
 
 @media (430px <=width <=768px) {
     .header nav .navigation {
@@ -429,6 +515,15 @@ article h3 {
 
 }
 
+/* -----------------
+    Tablet view end
+   ----------------- */
+
+
+/* -------------
+    Mobile view
+   ------------- */
+
 @media (width <=429px) {
     .banner {
         display: flex;
@@ -447,14 +542,14 @@ article h3 {
         align-items: center;
         text-align: center;
     }
-
+/* 
     .banner-head h2 {
         line-height: 50px;
     }
 
     .banner-head p {
         line-height: 20px;
-    }
+    } */
 
     .banner-img img {
         position: inherit;
