@@ -470,7 +470,7 @@ article h3 {
     Tablet view start
    ------------------- */ 
 
-@media (430px <=width <=768px) {
+@media (576px <=width <=768px) {
     .header nav .navigation {
         display: none;
     }
@@ -524,7 +524,7 @@ article h3 {
     Mobile view
    ------------- */
 
-@media (width <=429px) {
+@media (width <=576px) {
     .banner {
         display: flex;
         flex-direction: column;
